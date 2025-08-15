@@ -1,0 +1,476 @@
+{
+  "info": {
+    "name": "librarymanagementsystem-lending-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getLoan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//loans/:loanId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loans",
+            ":loanId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createLoan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"ID\",\n  \"bookId\": \"ID\",\n  \"branchId\": \"ID\",\n  \"branchInventoryId\": \"ID\",\n  \"status\": \"Enum\",\n  \"checkedOutAt\": \"Date\",\n  \"dueDate\": \"Date\",\n  \"returnedAt\": \"Date\",\n  \"renewalCount\": \"Integer\",\n  \"renewalHistory\": \"Object\",\n  \"lastRenewedAt\": \"Date\",\n  \"checkedOutBy\": \"ID\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//loans",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateLoan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Enum\",\n  \"dueDate\": \"Date\",\n  \"returnedAt\": \"Date\",\n  \"renewalCount\": \"Integer\",\n  \"renewalHistory\": \"Object\",\n  \"lastRenewedAt\": \"Date\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//loans/:loanId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loans",
+            ":loanId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteLoan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//loans/:loanId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loans",
+            ":loanId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listLoans",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//loans",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getReservation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//reservations/:reservationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "reservations",
+            ":reservationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createReservation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"ID\",\n  \"bookId\": \"ID\",\n  \"branchId\": \"ID\",\n  \"status\": \"Enum\",\n  \"requestedAt\": \"Date\",\n  \"queuePosition\": \"Integer\",\n  \"activationNotifiedAt\": \"Date\",\n  \"fulfilledAt\": \"Date\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//reservations",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "reservations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateReservation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Enum\",\n  \"queuePosition\": \"Integer\",\n  \"activationNotifiedAt\": \"Date\",\n  \"fulfilledAt\": \"Date\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//reservations/:reservationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "reservations",
+            ":reservationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteReservation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//reservations/:reservationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "reservations",
+            ":reservationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listReservations",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//reservations",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "reservations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLoanEvent",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//loanevents/:loanEventId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loanevents",
+            ":loanEventId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createLoanEvent",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"loanId\": \"ID\",\n  \"eventType\": \"Enum\",\n  \"eventDate\": \"Date\",\n  \"actorUserId\": \"ID\",\n  \"note\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//loanevents",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loanevents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateLoanEvent",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"note\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//loanevents/:loanEventId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loanevents",
+            ":loanEventId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteLoanEvent",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//loanevents/:loanEventId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loanevents",
+            ":loanEventId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listLoanEvents",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//loanevents",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "loanevents"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

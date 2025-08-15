@@ -1,0 +1,70 @@
+
+syntax = "proto3";
+
+package lending;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message loan {
+    string id = 1;
+    string userId = 2;
+    string bookId = 3;
+    string branchId = 4;
+    string branchInventoryId = 5;
+    int32 status = 6;
+    google.protobuf.Timestamp checkedOutAt = 7;
+    google.protobuf.Timestamp dueDate = 8;
+    google.protobuf.Timestamp returnedAt = 9;
+    int32 renewalCount = 10;
+    repeated google.protobuf.Struct renewalHistory = 11;
+    google.protobuf.Timestamp lastRenewedAt = 12;
+    string checkedOutBy = 13;
+}
+message reservation {
+    string id = 1;
+    string userId = 2;
+    string bookId = 3;
+    string branchId = 4;
+    int32 status = 5;
+    google.protobuf.Timestamp requestedAt = 6;
+    int32 queuePosition = 7;
+    google.protobuf.Timestamp activationNotifiedAt = 8;
+    google.protobuf.Timestamp fulfilledAt = 9;
+}
+message loanEvent {
+    string id = 1;
+    string loanId = 2;
+    int32 eventType = 3;
+    google.protobuf.Timestamp eventDate = 4;
+    string actorUserId = 5;
+    string note = 6;
+}
+
+
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+        string mobile = 8;
+    bool mobileVerified = 9;        repeated string userGroupNames = 10;
+    repeated string userGroupIdList = 11;string accessToken = 12;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service lendingService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}
